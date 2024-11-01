@@ -26,12 +26,19 @@ diamonds <- diamonds %>% rename(
 
 ## Exercise 1
 
-```{r}
-# Do some preliminary investigations & cleaning
-
-
-
-
+```{r ex_1}
+ggplot(data = diamonds, 
+       mapping = aes(
+         x = carat, 
+         y = price
+         )) +
+  geom_point() + 
+  geom_smooth(method = lm) +
+  labs(
+    x = "carat of diamond",
+    y = "Price of diamond ($)",
+    title = "Price VS Carat of diamonds",
+  )
 ```
 
 
@@ -43,6 +50,7 @@ diamonds <- diamonds %>%
   mutate(table_mm = table_pct * width_mm / 100)
 
 # Overall table_mm arithmetic mean?
+
 
 
 
